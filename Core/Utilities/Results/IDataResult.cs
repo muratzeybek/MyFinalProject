@@ -6,7 +6,7 @@ namespace Core.Utilities.Results
 {
     public interface IDataResult<T> :IResult
     {
-        T data { get; }
+        T Data { get; }
 
     }
 }

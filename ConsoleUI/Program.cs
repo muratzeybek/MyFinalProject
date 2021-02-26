@@ -14,7 +14,7 @@ namespace ConsoleUI
             // CategoryTest();
 
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var product in productManager.GetProductDetails())
+            foreach (var product in productManager.GetProductDetails().Data)
             {
                 Console.WriteLine("PRODUCT NAME ________ CATEGORY NAME");
                 Console.WriteLine(product.ProductName + " __________ " + product.CategoryName);
@@ -38,7 +38,7 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var product in productManager.GetByUnitPrice(40, 100))
+            foreach (var product in productManager.GetByUnitPrice(40, 100).Data)
             {
                 Console.WriteLine(product.ProductName);
                 // Console.WriteLine(" : " + product.UnitPrice + " $");
